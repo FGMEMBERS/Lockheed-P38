@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>intcanope</object-name>
+    <object-name>inttourcanope</object-name>
+    <object-name>inttourfenG</object-name>
+    <object-name>intfenG</object-name>
+    <object-name>inttourfenD</object-name>
+    <object-name>intfenD</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecanope</object-name>
+    <object-name>intvitrefenG</object-name>
+    <object-name>intvitrefenD</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecanope</object-name>
+    <object-name>intvitrefenG</object-name>
+    <object-name>intvitrefenD</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecanope</object-name>
+    <object-name>intvitrefenG</object-name>
+    <object-name>intvitrefenD</object-name>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.277 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.444 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Planche de bord -->
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -3.102 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.526 </z-m>
+      <roll-deg>     0 </roll-deg>
+      <pitch-deg>    0 </pitch-deg>
+      <heading-deg>  0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Canopy -->
+  <animation>
+    <name>IntCanopeHaut</name>
+    <object-name>intcanope</object-name>
+    <object-name>inttourcanope</object-name>
+    <object-name>intvitrecanope</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntCanopeHaut</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 120 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -1.850 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.044 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntFenetreGauche</name>
+    <object-name>inttourfenG</object-name>
+    <object-name>intfenG</object-name>
+    <object-name>intvitrefenG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntFenetreGauche</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 25 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.189 </x-m>
+      <y-m>  0.378 </y-m>
+      <z-m>  0.402 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntFenetreDroite</name>
+    <object-name>inttourfenD</object-name>
+    <object-name>intfenD</object-name>
+    <object-name>intvitrefenD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntFenetreDroite</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -25 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.189 </x-m>
+      <y-m> -0.378 </y-m>
+      <z-m>  0.402 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
