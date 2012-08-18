@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?> 
 
 <PropertyList> 
 
@@ -20,8 +20,8 @@
 
   <animation>
     <type>shader</type>
-    <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <texture>shader.png</texture>
     <object-name>vitre</object-name>
   </animation>
 
@@ -31,10 +31,10 @@
     <object-name>needle1</object-name>
     <object-name>needle2</object-name>
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -56,7 +56,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needle2</object-name>
-    <property>engines/engine[1]/rpm</property>
+    <property>/engines/engine[1]/rpm</property>
     <interpolation>
       <entry><ind>  400 </ind><dep> 205 </dep></entry>
       <entry><ind> 3500 </ind><dep> 515 </dep></entry>
