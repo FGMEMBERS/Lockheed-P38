@@ -139,35 +139,16 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -204,8 +185,50 @@
     <object-name>canope</object-name>
     <object-name>fenetreG</object-name>
     <object-name>fenetreD</object-name>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
   </effect>
-
+  
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>directionG</object-name>
+    <object-name>directionD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteGE</object-name>
+    <object-name>porteGI</object-name>
+    <object-name>porteDI</object-name>
+    <object-name>porteDE</object-name>
+    <object-name>bolG</object-name>
+    <object-name>bolD</object-name>
+    <object-name>entreeair</object-name>
+    <object-name>air</object-name>
+    <object-name>turbos</object-name>
+    <object-name>prises</object-name>
+    <object-name>bouchons</object-name>
+    <object-name>porteairGG</object-name>
+    <object-name>porteairGD</object-name>
+    <object-name>porteairDG</object-name>
+    <object-name>porteairDD</object-name>
+    <object-name>canope</object-name>
+    <object-name>fenetreG</object-name>
+    <object-name>fenetreD</object-name>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+  </effect>
+  
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
@@ -227,6 +250,22 @@
     <object-name>propdiscG</object-name>
     <object-name>propdiscD</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>vitrecanope</object-name>
+    <object-name>vitrefenG</object-name>
+    <object-name>vitrefenD</object-name>
+    <object-name>propblurG</object-name>
+    <object-name>propblurD</object-name>
+    <object-name>propdiscG</object-name>
+    <object-name>propdiscD</object-name>
+  </effect>
 
   <!-- Rentré des roues Temporairement disparition/apparition des roues -->
   <animation>
@@ -250,14 +289,21 @@
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -1.563 </z-m>
+      <z-m> -1.500 </z-m>
     </offsets>
   </model>
 
   <!-- Intérieur -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Lockheed-P38/Models/Interior/interior.xml</path>
   </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
 
   <!-- Cranking effects -->
   <!-- Left -->
@@ -385,7 +431,7 @@
     <condition>
       <greater-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </greater-than>
     </condition>
   </animation>
@@ -397,11 +443,11 @@
     <and>
       <greater-than>
         <property>engines/engine[0]/rpm</property>
-        <value>500.000</value>
+        <value> 500 </value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100.001</value>
+        <value> 1100.001 </value>
       </less-than>
     </and>
     </condition>
@@ -413,7 +459,7 @@
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </less-than>
     </condition>
   </animation>
@@ -422,6 +468,12 @@
     <type>spin</type>
     <object-name>HeliceCompleteG</object-name>
     <property>engines/engine[0]/rpm</property>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <factor> 1 </factor>
     <center>
       <x-m> -4.189 </x-m>
@@ -450,7 +502,7 @@
     <condition>
       <greater-than>
         <property>engines/engine[1]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </greater-than>
     </condition>
   </animation>
@@ -462,11 +514,11 @@
     <and>
       <greater-than>
         <property>engines/engine[1]/rpm</property>
-        <value>500.000</value>
+        <value> 500 </value>
       </greater-than>
       <less-than>
         <property>engines/engine[1]/rpm</property>
-        <value>1100.001</value>
+        <value> 1100.001 </value>
       </less-than>
     </and>
     </condition>
@@ -478,7 +530,7 @@
     <condition>
       <less-than>
         <property>engines/engine[1]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </less-than>
     </condition>
   </animation>
@@ -487,6 +539,12 @@
     <type>spin</type>
     <object-name>HeliceCompleteD</object-name>
     <property>engines/engine[1]/rpm</property>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <factor> 1 </factor>
     <center>
       <x-m> -4.189 </x-m>
@@ -1094,5 +1152,59 @@
     </axis>
   </animation>
 
-</PropertyList>
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/beacon.xml</path>
+    <offsets>
+      <x-m>  4.99369 </x-m>
+      <y-m> -2.40405 </y-m>
+      <z-m>  1.94939 </z-m>
+    </offsets>
+  </model>
 
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/beacon.xml</path>
+    <offsets>
+      <x-m> 4.99369 </x-m>
+      <y-m> 2.40405 </y-m>
+      <z-m> 1.94939 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/RedLight.xml</path>
+    <offsets>
+      <x-m> -1.64766 </x-m>
+      <y-m> -7.89396 </y-m>
+      <z-m>  0.72685 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -1.63745 </x-m>
+      <y-m> -7.89406 </y-m>
+      <z-m>  0.72564 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/GreenLight.xml</path>
+    <offsets>
+      <x-m> -1.64766 </x-m>
+      <y-m>  7.89396 </y-m>
+      <z-m>  0.72685 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Lockheed-P38/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -1.63745 </x-m>
+      <y-m>  7.89406 </y-m>
+      <z-m>  0.72564 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

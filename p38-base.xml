@@ -4,6 +4,7 @@
 
   <sim include="Nasal/views.xml">
 
+    <description>Lockheed P 38 (YASim)</description>
     <author>BARANGER Emmanuel (3D/FDM)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
@@ -91,6 +92,9 @@
         <magnetos>0</magnetos>
       </engine>
     </engines>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
   </controls>
 
   <engines>
@@ -109,7 +113,7 @@
   <input>
     <keyboard include="Nasal/p38-keyboard.xml"/>
   </input>
- 
+
   <nasal>
     <doors>
       <file>Aircraft/Lockheed-P38/Nasal/doors.nas</file>
