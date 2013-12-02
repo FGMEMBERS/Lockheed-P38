@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <sim>
-
+    
     <model>
       <livery>
-        <name type="string">P-38 Early generic</name>
-        <texture>Liveries/1024x1024/earlyP-38.png</texture>
+        <name type="string">USAAF 8FS 49FG "Itsy Bitsy II"</name>
+        <texture>Liveries/2048x2048/USAAFIB.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
           <blue>  0.3 </blue>
         </specular>
-
         <emission>
           <red>   0.02 </red>
           <green> 0.02 </green>
@@ -23,5 +22,5 @@
     </model>
     
   </sim>
-
+  
 </PropertyList>
