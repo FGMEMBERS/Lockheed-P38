@@ -23,30 +23,18 @@
     <object-name>intvitrefenD</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Lockheed-P38/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intvitrecanope</object-name>
     <object-name>intvitrefenG</object-name>
     <object-name>intvitrefenD</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>intvitres</object-name>
-    <object-name>intvitrecanope</object-name>
-    <object-name>intvitrefenG</object-name>
-    <object-name>intvitrefenD</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>intvitres</object-name>
     <object-name>intvitrecanope</object-name>
     <object-name>intvitrefenG</object-name>
