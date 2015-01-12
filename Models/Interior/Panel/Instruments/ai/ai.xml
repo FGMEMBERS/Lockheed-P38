@@ -15,13 +15,12 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <name>vitre</name>
-  </animation>
-
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Lockheed-P38/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
   <animation> 
     <type>material</type>
     <object-name>fond2</object-name>
@@ -38,7 +37,7 @@
     <type>rotate</type>
     <object-name>face</object-name>
     <property>orientation/roll-deg</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis> 
       <x> 1 </x>
       <y> 0 </y>
@@ -47,4 +46,3 @@
   </animation>
 
 </PropertyList>
-
