@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
-  <sim include="Nasal/views.xml">
-
+  
+  <sim include="Systems/views.xml">
+    
     <description>Lockheed P 38 (YASim)</description>
     <author>BARANGER Emmanuel (3D/FDM)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
-
+    
     <fuel-fraction>0.8</fuel-fraction>
-
+    
     <startup>
       <splash-texture>Aircraft/Lockheed-P38/p38-splash.png</splash-texture>
     </startup>
-
+    
     <model>
       <path>Aircraft/Lockheed-P38/Models/p38.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
     </model>
-
+    
     <submodels> 
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Lockheed-P38/Models/Effects/guns/submodels.xml</path>
     </submodels>
-
+    
     <sound>
       <path>Aircraft/Lockheed-P38/Sounds/p38-sound.xml</path>
     </sound>
-
+    
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
@@ -52,7 +52,7 @@
         <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
-
+    
     <flaps>
       <setting> 0.00 </setting>
       <setting> 0.25 </setting>
@@ -60,35 +60,23 @@
       <setting> 0.75 </setting>
       <setting> 1.00 </setting>
     </flaps>
-
-    <help>
-      <title>Northrop p38</title>
-      <key>
-        <name>d</name>
-        <desc>Open/Close canopy</desc>
-      </key>
-      <key>
-        <name>D</name>
-        <desc>Open/Close side windows</desc>
-      </key>
-      <key>
-        <name>e</name>
-        <desc>Guns fire</desc>
-      </key>
-    </help>
-
+    
+    <help include="Systems/help.xml"/>
+    
     <menubar include="Dialogs/p38-menu.xml"/>
-
+    
   </sim>
-
+  
+  <input include="Systems/p38-keyboard.xml"/>
+  
   <controls>
     <engines>
       <engine n="0">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
       <engine n="1">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
     </engines>
@@ -96,7 +84,7 @@
       <brake-parking type="double">1</brake-parking>
     </gear>
   </controls>
-
+  
   <engines>
     <engine n="0">
       <engine-num type="int">0</engine-num>
@@ -109,11 +97,7 @@
       <running>false</running>
     </engine>
   </engines>
-
-  <input>
-    <keyboard include="Nasal/p38-keyboard.xml"/>
-  </input>
-
+  
   <nasal>
     <doors>
       <file>Aircraft/Lockheed-P38/Nasal/doors.nas</file>
@@ -127,6 +111,5 @@
       <file>Aircraft/Lockheed-P38/Nasal/revi.nas</file>
     </guns>
   </nasal>
-
+  
 </PropertyList>
-

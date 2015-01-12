@@ -9,6 +9,7 @@
 
     <condition>
       <property>controls/armament/trigger</property>
+      <!-- <property>sim/multiplay/generic/int[10]</property> -->
     </condition>
 
     <emissive>true</emissive>
@@ -26,8 +27,9 @@
       <phi-min-deg>   -1.5 </phi-min-deg>
       <phi-max-deg>    1.5 </phi-max-deg>
       <speed-mps>
-        <value>  2 </value>
-        <spread> 0 </spread>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>-0.257</factor>
+        <spread>15</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>  5 </x-min-deg-sec>

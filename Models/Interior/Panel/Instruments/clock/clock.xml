@@ -15,18 +15,12 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Lockheed-P38/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -45,7 +39,7 @@
     <type>rotate</type>
     <object-name>heures</object-name>
     <property>/instrumentation/clock/indicated-sec</property>
-    <factor>0.00833333333333333</factor>
+    <factor> 0.00833333333333333 </factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -57,7 +51,7 @@
     <type>rotate</type>
     <object-name>minutes</object-name>
     <property>/instrumentation/clock/indicated-sec</property>
-    <factor>0.1</factor>
+    <factor> 0.1 </factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -69,7 +63,7 @@
     <type>rotate</type>
     <object-name>secondes</object-name>
     <property>/instrumentation/clock/indicated-sec</property>
-    <factor>6</factor>
+    <factor> 6 </factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -78,4 +72,3 @@
   </animation>
 
 </PropertyList>
-
